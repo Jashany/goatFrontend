@@ -11,7 +11,8 @@ const Sidebar = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    if(location.pathname === '/login' || location.pathname === '/signup') return null;
+    if(location.pathname === '/login' || location.pathname === '/signup') return 
+    return <></>;
     const { userInfo } = useSelector((state) => state.auth);
 
     return (
