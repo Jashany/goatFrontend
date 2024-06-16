@@ -4,13 +4,20 @@ import { Link } from 'react-router-dom';
 import styles from './Sidebar.module.css';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../Slices/authslice';
+import { useLocation,useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
     const dispatch = useDispatch();
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    if(location.pathname === '/login' || location.pathname === '/signup') return null;
     const { userInfo } = useSelector((state) => state.auth);
 
-    return ( 
+    return (
+
         <div className={styles.sidebar}>
+
             <div className={styles.userDetails}>
                 <h2>Goat Mitra</h2>
                 <p>Name: {userInfo.name}</p>
@@ -23,6 +30,7 @@ const Sidebar = () => {
             <div className={styles.logout}>
                 <button onClick={()=>{
                     dispatch(logout());
+                    navigate('/login');
                 }}>Logout</button>
             </div>
         </div>
