@@ -45,7 +45,11 @@ const Signup = () => {
     <div className={styles.signupContainer}>
       <h1 className={styles.signupTitle}>Signup</h1>
       <form onSubmit={handleSubmit} className={styles.signupForm}>
-        <div>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '20px',
+        }}>
           <label>
             Name:
             <input

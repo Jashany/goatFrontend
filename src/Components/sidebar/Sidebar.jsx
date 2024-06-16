@@ -10,10 +10,10 @@ const Sidebar = () => {
     const dispatch = useDispatch();
     const location = useLocation();
     const navigate = useNavigate();
-
-    if(location.pathname === '/login' || location.pathname === '/signup') return 
-    return <></>;
     const { userInfo } = useSelector((state) => state.auth);
+
+    if(location.pathname === '/login' || location.pathname === '/signup')  
+    return <></>;
 
     return (
 
